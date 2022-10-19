@@ -5,7 +5,7 @@ import AuthUser from './AuthUser';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 
-const Login = () => {
+const Login = (e) => {
     
     const [email , setEmail] = useState('');
     const [password , setPassword] = useState('');

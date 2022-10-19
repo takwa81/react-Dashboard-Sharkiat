@@ -1,34 +1,35 @@
-import React from "react";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-const Home = () =>{
+import React from 'react';
+import '../../asset/admin/css/styles.css' ;
+import '../../asset/admin/js/scripts.js' ;
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import Footer from './Footer';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
+import { Route, Routes } from 'react-router-dom';
+import Products from './Products/Products';
 
-    const navigate = useNavigate();
-    useEffect(()=>{
-        if(!localStorage.getItem('token')){
-            navigate('/login');
-        }
-    },[navigate]) ;
 
-    const logout = () =>{
-        localStorage.removeItem('token');
-        navigate('/login');
+const Home = () => {
+    let session = localStorage.getItem('token');
 
-    }
-
-    return(
-        <div className="container"> 
-            <div className="row mt-5">
-                <div className="col-md-6">
-                    <h3>Home Page</h3>
+    return (
+        <div className="sb-nav-fixed">
+            <Navbar />
+            <div id="layoutSidenav">
+                <div id="layoutSidenav_nav">
+                    <Sidebar />
                 </div>
-                <div className="col-md-6">
-                    <button 
-                     onClick={logout}
-                     className="btn btn-primary">Logout</button>
+                <div id="layoutSidenav_content">
+                    <main>
+                        
+                    </main>
+                    {/* <Footer /> */}
                 </div>
             </div>
         </div>
+
     );
-} 
-export default Home ;
+
+}
+
+export default Home;

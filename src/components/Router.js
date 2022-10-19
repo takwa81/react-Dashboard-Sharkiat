@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, Route , Routes } from "react-router-dom";
 import Login from "./Auth/Login";
 import Home from "./Dashboard/Home";
-
+import Products from "./Dashboard/Products/Products";
 
 const Router = () =>{
     let session = localStorage.getItem('token');
